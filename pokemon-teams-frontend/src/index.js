@@ -66,4 +66,23 @@ document.addEventListener("DOMContentLoaded", function(){
     
     
     getTrainers()
+
+
+    function addPokemon(pokemonObj) {
+
+        return fetch(POKEMONS_URL, {
+            method: "POST",
+            headers: { "Content-Type": "application/json"},
+            body: JSON.stringify(pokemonObj)
+        })
+    
+        .then(response => response.json())
+        .then(pokemon => console.log(pokemon))
+    
+    }
+    
+    addPokemon()
+    
 })
+
+
